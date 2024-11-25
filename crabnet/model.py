@@ -72,10 +72,6 @@ class Model():
         print(f'loading data with up to {data_loaders.n_elements:0.0f} '
               f'elements in the formula')
 
-        # update n_elements after loading dataset
-        if self.n_elements != 'infer':
-            self.n_elements = data_loaders.n_elements
-
         data_loader = data_loaders.get_data_loaders(inference=inference)
         y = data_loader.dataset.data[1]
         if train:
